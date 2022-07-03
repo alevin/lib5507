@@ -1,0 +1,17 @@
+plugins {
+    id 'com.github.spotbugs' version "5.0.4" apply false
+    id "edu.wpi.first.GradleRIO" version "2022.4.1" apply false
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'edu.wpi.first.GradleRIO'
+
+    dependencies {
+        // WPIlib core
+        api wpi.java.deps.wpilib()
+        // Vendor dependencies
+        wpi.vendor.loadFrom(project(":"))
+        api wpi.java.vendor.java()
+    }
+}
