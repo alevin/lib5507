@@ -1,19 +1,20 @@
+//apply plugin: "maven-publish";
+
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id "edu.wpi.first.GradleRIO" version "2022.2.1"
+//    id "edu.wpi.first.GradleRIO" version "2022.2.1"
 }
 
-//group = 'com.github.6391-ursuline-bearbotics'
+group = 'com.github.6391-ursuline-bearbotics'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
 dependencies {
-    implementation wpi.java.deps.wpilib()
-    implementation wpi.java.vendor.java()
-   // implementation 'com.github.jitpack:gradle:-SNAPSHOT'
     implementation 'com.github.jitpack:gradle-simple:PR4-SNAPSHOT'
+//    implementation wpi.java.deps.wpilib()
+//    implementation wpi.java.vendor.java()
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
@@ -26,9 +27,13 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+//task clean(type: Delete) { 
+//    delete rootProject.buildDir 
+//}
+
 artifacts {
     archives sourcesJar
-    archives javadocJar
+//    archives javadocJar
 }
 
 publishing {
@@ -44,3 +49,4 @@ allprojects {
 			maven { url 'https://jitpack.io' }
 		}
 	}
+
