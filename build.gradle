@@ -5,7 +5,7 @@ plugins {
     id 'edu.wpi.first.GradleRIO' version '2022.4.1'
 }
 
-//group = 'lib5507'
+group = 'lib5507'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
