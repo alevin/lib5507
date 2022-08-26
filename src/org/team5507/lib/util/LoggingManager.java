@@ -1,4 +1,4 @@
-package lib5507.util;
+package org.team5507.lib.util;
 
 import edu.wpi.first.util.datalog.DataLog;
 import edu.wpi.first.wpilibj.DataLogManager;

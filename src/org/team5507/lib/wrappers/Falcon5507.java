@@ -1,11 +1,11 @@
-package lib5507.wrappers;
+package org.team5507.lib.wrappers;
 
 import com.ctre.phoenix.ErrorCode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.RemoteFeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
-import lib5507.util.Constants;
+import org.team5507.lib.util.Constants;
 
 /**
  * Wraps a standard TalonSRX.

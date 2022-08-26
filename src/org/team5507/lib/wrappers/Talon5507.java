@@ -1,4 +1,4 @@
-package lib5507.wrappers;
+package org.team5507.lib.wrappers;
 
 import com.ctre.phoenix.ErrorCode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
@@ -9,7 +9,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.sensors.AbsoluteSensorRange;
 import com.ctre.phoenix.sensors.SensorInitializationStrategy;
 
-import lib5507.util.Constants;
+import org.team5507.lib.util.Constants;
 
 /**
  * Wraps a standard TalonSRX.

@@ -1,4 +1,4 @@
-package lib5507.util;
+package org.team5507.lib.util;
 
 /**
  * Holds universal constants for use throughout the library.

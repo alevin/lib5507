@@ -1,4 +1,4 @@
-package lib5507.wrappers;
+package org.team5507.lib.wrappers;
 
 import com.ctre.phoenix.ErrorCode;
 import com.ctre.phoenix.ParamEnum;
@@ -32,7 +32,7 @@ import com.ctre.phoenix.sensors.AbsoluteSensorRange;
 import com.ctre.phoenix.sensors.CANCoder;
 import com.ctre.phoenix.sensors.SensorInitializationStrategy;
 
-import lib5507.util.Gains;
+import org.team5507.lib.util.Gains;
 
 /**
  * 
