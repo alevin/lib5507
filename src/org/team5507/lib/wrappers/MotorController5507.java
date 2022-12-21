@@ -25,20 +25,15 @@ import com.ctre.phoenix.motorcontrol.StatusFrame;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
 import com.ctre.phoenix.motorcontrol.StickyFaults;
 import com.ctre.phoenix.motorcontrol.SupplyCurrentLimitConfiguration;
-//import com.ctre.phoenix.motorcontrol.VelocityMeasPeriod;
+// import com.ctre.phoenix.motorcontrol.VelocityMeasPeriod;
 import com.ctre.phoenix.motorcontrol.can.FilterConfiguration;
 import com.ctre.phoenix.motorcontrol.can.SlotConfiguration;
 import com.ctre.phoenix.sensors.AbsoluteSensorRange;
 import com.ctre.phoenix.sensors.CANCoder;
 import com.ctre.phoenix.sensors.SensorInitializationStrategy;
-
 import org.team5507.lib.util.Gains;
 
-/**
- * 
- * taken from https://github.com/HarkerRobo/HarkerRoboLib (team 1072)
- */
-
+/** taken from https://github.com/HarkerRobo/HarkerRoboLib (team 1072) */
 public interface MotorController5507 extends IMotorController {
     // void enableCurrentLimit(boolean enable);
 
@@ -46,15 +41,18 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode configStatorCurrentLimit(StatorCurrentLimitConfiguration currLimitCfg);
 
-    ErrorCode configGetSupplyCurrentLimit(SupplyCurrentLimitConfiguration currLimitConfigsToFill, int timeoutMs);
+    ErrorCode configGetSupplyCurrentLimit(
+            SupplyCurrentLimitConfiguration currLimitConfigsToFill, int timeoutMs);
 
     ErrorCode configGetSupplyCurrentLimit(SupplyCurrentLimitConfiguration currLimitConfigsToFill);
 
-    ErrorCode configGetStatorCurrentLimit(StatorCurrentLimitConfiguration currLimitConfigsToFill, int timeoutMs);
+    ErrorCode configGetStatorCurrentLimit(
+            StatorCurrentLimitConfiguration currLimitConfigsToFill, int timeoutMs);
 
     ErrorCode configGetStatorCurrentLimit(StatorCurrentLimitConfiguration currLimitConfigsToFill);
 
-    ErrorCode configIntegratedSensorAbsoluteRange(AbsoluteSensorRange absoluteSensorRange, int timeoutMs);
+    ErrorCode configIntegratedSensorAbsoluteRange(
+            AbsoluteSensorRange absoluteSensorRange, int timeoutMs);
 
     ErrorCode configIntegratedSensorAbsoluteRange(AbsoluteSensorRange absoluteSensorRange);
 
@@ -62,10 +60,11 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode configIntegratedSensorOffset(double offsetDegrees);
 
-    ErrorCode configIntegratedSensorInitializationStrategy(SensorInitializationStrategy initializationStrategy,
-            int timeoutMs);
+    ErrorCode configIntegratedSensorInitializationStrategy(
+            SensorInitializationStrategy initializationStrategy, int timeoutMs);
 
-    ErrorCode configIntegratedSensorInitializationStrategy(SensorInitializationStrategy initializationStrategy);
+    ErrorCode configIntegratedSensorInitializationStrategy(
+            SensorInitializationStrategy initializationStrategy);
 
     ErrorCode DestroyObject();
 
@@ -153,10 +152,11 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode configSelectedFeedbackCoefficient(double coefficient);
 
-    ErrorCode configRemoteFeedbackFilter(int deviceID, RemoteSensorSource remoteSensorSource, int remoteOrdinal,
-            int timeoutMs);
+    ErrorCode configRemoteFeedbackFilter(
+            int deviceID, RemoteSensorSource remoteSensorSource, int remoteOrdinal, int timeoutMs);
 
-    ErrorCode configRemoteFeedbackFilter(int deviceID, RemoteSensorSource remoteSensorSource, int remoteOrdinal);
+    ErrorCode configRemoteFeedbackFilter(
+            int deviceID, RemoteSensorSource remoteSensorSource, int remoteOrdinal);
 
     ErrorCode configRemoteFeedbackFilter(CANCoder canCoderRef, int remoteOrdinal, int timeoutMs);
 
@@ -166,7 +166,8 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode configSensorTerm(SensorTerm sensorTerm, FeedbackDevice feedbackDevice);
 
-    ErrorCode configSensorTerm(SensorTerm sensorTerm, RemoteFeedbackDevice feedbackDevice, int timeoutMs);
+    ErrorCode configSensorTerm(
+            SensorTerm sensorTerm, RemoteFeedbackDevice feedbackDevice, int timeoutMs);
 
     ErrorCode configSensorTerm(SensorTerm sensorTerm, RemoteFeedbackDevice feedbackDevice);
 
@@ -202,17 +203,23 @@ public interface MotorController5507 extends IMotorController {
 
     int getStatusFramePeriod(StatusFrame frame);
 
-    ErrorCode configForwardLimitSwitchSource(RemoteLimitSwitchSource type, LimitSwitchNormal normalOpenOrClose,
-            int deviceID, int timeoutMs);
+    ErrorCode configForwardLimitSwitchSource(
+            RemoteLimitSwitchSource type,
+            LimitSwitchNormal normalOpenOrClose,
+            int deviceID,
+            int timeoutMs);
 
-    ErrorCode configForwardLimitSwitchSource(RemoteLimitSwitchSource type, LimitSwitchNormal normalOpenOrClose,
-            int deviceID);
+    ErrorCode configForwardLimitSwitchSource(
+            RemoteLimitSwitchSource type, LimitSwitchNormal normalOpenOrClose, int deviceID);
 
-    ErrorCode configReverseLimitSwitchSource(RemoteLimitSwitchSource type, LimitSwitchNormal normalOpenOrClose,
-            int deviceID, int timeoutMs);
+    ErrorCode configReverseLimitSwitchSource(
+            RemoteLimitSwitchSource type,
+            LimitSwitchNormal normalOpenOrClose,
+            int deviceID,
+            int timeoutMs);
 
-    ErrorCode configReverseLimitSwitchSource(RemoteLimitSwitchSource type, LimitSwitchNormal normalOpenOrClose,
-            int deviceID);
+    ErrorCode configReverseLimitSwitchSource(
+            RemoteLimitSwitchSource type, LimitSwitchNormal normalOpenOrClose, int deviceID);
 
     void overrideLimitSwitchesEnable(boolean enable);
 
@@ -254,7 +261,8 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode config_IntegralZone(int slotIdx, double izone);
 
-    ErrorCode configAllowableClosedloopError(int slotIdx, double allowableClosedLoopError, int timeoutMs);
+    ErrorCode configAllowableClosedloopError(
+            int slotIdx, double allowableClosedLoopError, int timeoutMs);
 
     ErrorCode configAllowableClosedloopError(int slotIdx, double allowableClosedLoopError);
 
@@ -326,7 +334,9 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode pushMotionProfileTrajectory(TrajectoryPoint trajPt);
 
-    ErrorCode startMotionProfile(BufferedTrajectoryPointStream stream, int minBufferedPts,
+    ErrorCode startMotionProfile(
+            BufferedTrajectoryPointStream stream,
+            int minBufferedPts,
             ControlMode motionProfControlMode);
 
     boolean isMotionProfileFinished();
@@ -353,8 +363,8 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode configFeedbackNotContinuous(boolean feedbackNotContinuous, int timeoutMs);
 
-    ErrorCode configRemoteSensorClosedLoopDisableNeutralOnLOS(boolean remoteSensorClosedLoopDisableNeutralOnLOS,
-            int timeoutMs);
+    ErrorCode configRemoteSensorClosedLoopDisableNeutralOnLOS(
+            boolean remoteSensorClosedLoopDisableNeutralOnLOS, int timeoutMs);
 
     ErrorCode configClearPositionOnLimitF(boolean clearPositionOnLimitF, int timeoutMs);
 
@@ -362,13 +372,16 @@ public interface MotorController5507 extends IMotorController {
 
     ErrorCode configClearPositionOnQuadIdx(boolean clearPositionOnQuadIdx, int timeoutMs);
 
-    ErrorCode configLimitSwitchDisableNeutralOnLOS(boolean limitSwitchDisableNeutralOnLOS, int timeoutMs);
+    ErrorCode configLimitSwitchDisableNeutralOnLOS(
+            boolean limitSwitchDisableNeutralOnLOS, int timeoutMs);
 
-    ErrorCode configSoftLimitDisableNeutralOnLOS(boolean softLimitDisableNeutralOnLOS, int timeoutMs);
+    ErrorCode configSoftLimitDisableNeutralOnLOS(
+            boolean softLimitDisableNeutralOnLOS, int timeoutMs);
 
     ErrorCode configPulseWidthPeriod_EdgesPerRot(int pulseWidthPeriod_EdgesPerRot, int timeoutMs);
 
-    ErrorCode configPulseWidthPeriod_FilterWindowSz(int pulseWidthPeriod_FilterWindowSz, int timeoutMs);
+    ErrorCode configPulseWidthPeriod_FilterWindowSz(
+            int pulseWidthPeriod_FilterWindowSz, int timeoutMs);
 
     ErrorCode getLastError();
 
@@ -392,7 +405,8 @@ public interface MotorController5507 extends IMotorController {
 
     int configGetCustomParam(int paramIndex);
 
-    ErrorCode configSetParameter(ParamEnum param, double value, int subValue, int ordinal, int timeoutMs);
+    ErrorCode configSetParameter(
+            ParamEnum param, double value, int subValue, int ordinal, int timeoutMs);
 
     ErrorCode configSetParameter(ParamEnum param, double value, int subValue, int ordinal);
 
@@ -426,7 +440,8 @@ public interface MotorController5507 extends IMotorController {
 
     void getSlotConfigs(SlotConfiguration slot);
 
-    ErrorCode configureFilter(FilterConfiguration filter, int ordinal, int timeoutMs, boolean enableOptimizations);
+    ErrorCode configureFilter(
+            FilterConfiguration filter, int ordinal, int timeoutMs, boolean enableOptimizations);
 
     ErrorCode configureFilter(FilterConfiguration filter, int ordinal, int timeoutMs);
 
@@ -450,23 +465,25 @@ public interface MotorController5507 extends IMotorController {
 
     double getSupplyCurrent();
 
-    //ErrorCode configVelocityMeasurementPeriod(VelocityMeasPeriod period, int timeoutMs);
+    // ErrorCode configVelocityMeasurementPeriod(VelocityMeasPeriod period, int timeoutMs);
 
-    //ErrorCode configVelocityMeasurementPeriod(VelocityMeasPeriod period);
+    // ErrorCode configVelocityMeasurementPeriod(VelocityMeasPeriod period);
 
     ErrorCode configVelocityMeasurementWindow(int windowSize, int timeoutMs);
 
     ErrorCode configVelocityMeasurementWindow(int windowSize);
 
-    ErrorCode configForwardLimitSwitchSource(LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose,
-            int timeoutMs);
+    ErrorCode configForwardLimitSwitchSource(
+            LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose, int timeoutMs);
 
-    ErrorCode configForwardLimitSwitchSource(LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose);
+    ErrorCode configForwardLimitSwitchSource(
+            LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose);
 
-    ErrorCode configReverseLimitSwitchSource(LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose,
-            int timeoutMs);
+    ErrorCode configReverseLimitSwitchSource(
+            LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose, int timeoutMs);
 
-    ErrorCode configReverseLimitSwitchSource(LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose);
+    ErrorCode configReverseLimitSwitchSource(
+            LimitSwitchSource type, LimitSwitchNormal normalOpenOrClose);
 
     int isFwdLimitSwitchClosed();
 
@@ -482,14 +499,13 @@ public interface MotorController5507 extends IMotorController {
 
     /**
      * Checks if the motor is stalling.
-     * 
-     * @param stallCurrent     minimum current indicating stall
+     *
+     * @param stallCurrent minimum current indicating stall
      * @param stallMinVelocity minimum velocity indicating stall
-     * @return true if motor is stalling; otherwise
-     *         false
+     * @return true if motor is stalling; otherwise false
      */
     public default boolean isStalling(double stallCurrent, double stallMinVelocity) {
-        return (this.getStatorCurrent() > stallCurrent && this.getSelectedSensorVelocity() < stallMinVelocity);
+        return (this.getStatorCurrent() > stallCurrent
+                && this.getSelectedSensorVelocity() < stallMinVelocity);
     }
-
 }

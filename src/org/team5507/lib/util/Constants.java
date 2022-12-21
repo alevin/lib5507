@@ -2,7 +2,7 @@ package org.team5507.lib.util;
 
 /**
  * Holds universal constants for use throughout the library.
- * 
+ *
  * @author Finn Frankis
  * @version 10/21/18
  */
@@ -16,5 +16,4 @@ public final class Constants {
 
     public static final double JOYSTICK_DEADBAND = 0.1;
     public static final double TRIGGER_DEADBAND = 0.1;
-
 }

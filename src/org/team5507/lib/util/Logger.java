@@ -1,12 +1,10 @@
 package org.team5507.lib.util;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
-import edu.wpi.first.wpilibj.DriverStation;
-
 /**
- * 
  * @author Finn Frankis
  * @version Nov 18, 2018
  */
@@ -24,9 +22,15 @@ public class Logger {
     }
 
     public void start() {
-        String fileName = DriverStation.getEventName() + DriverStation.getMatchType() + "-"
-                + DriverStation.getAlliance() + DriverStation.getLocation() + "-"
-                + DriverStation.getMatchNumber() + ".txt";
+        String fileName =
+                DriverStation.getEventName()
+                        + DriverStation.getMatchType()
+                        + "-"
+                        + DriverStation.getAlliance()
+                        + DriverStation.getLocation()
+                        + "-"
+                        + DriverStation.getMatchNumber()
+                        + ".txt";
         try {
             logger = new PrintWriter(fileLoc + fileName);
         } catch (FileNotFoundException e) {
@@ -35,7 +39,11 @@ public class Logger {
     }
 
     public void log(String val) {
-        String message = (DriverStation.isAutonomous() ? "A" : "T") + DriverStation.getMatchTime() + " " + val;
+        String message =
+                (DriverStation.isAutonomous() ? "A" : "T")
+                        + DriverStation.getMatchTime()
+                        + " "
+                        + val;
         if (logger != null) {
             logger.println(message);
         } else {

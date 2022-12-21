@@ -1,0 +1,71 @@
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'edu.wpi.first.GradleRIO' version '2022.4.1'
+
+    id "org.sonarqube" version "3.4.0.2513"
+
+}
+
+group = 'lib5507'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    implementation 'com.github.jitpack:gradle-simple:PR4-SNAPSHOT'
+    implementation wpi.java.deps.wpilib()
+    implementation wpi.java.vendor.java()
+}
+
+sourceSets {
+    main.java.srcDirs = ['src']
+}
+
+//task sourcesJar(type: Jar, dependsOn: classes) {
+//    classifier = 'sources'
+//    from sourceSets.main.allSource
+//}
+
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+
+//artifacts {
+//    archives sourcesJar
+   // archives javadocJar
+//}
+
+java {
+	withSourcesJar()
+//	withJavadocJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+allprojects {
+        repositories {
+            maven { url 'https://jitpack.io' }
+        }
+}
+
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "alevin_lib5507"
+    property "sonar.organization", "alevin-github"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
+
+//deployArtifact.jarTask = jar
+//wpi.java.configureExecutableTasks(jar)
+//wpi.java.configureTestTasks(test)
